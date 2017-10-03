@@ -23,6 +23,9 @@
 #include "pm_extern.h"
 #include "pm_usb.h"
 #include "pm_hooks.h"
+#include "pm_config.h"
+
+extern u32 XPm_ConfigObject[]; /* pm_cfg_obj.c */
 
 /* All GIC wakes in GPI1 */
 #define PMU_IOMODULE_GPI1_GIC_WAKES_ALL_MASK \
@@ -62,6 +65,7 @@ void XPfw_PmInit(void)
 	if (bootType == PM_COLD_BOOT) {
 		PmMasterDefaultConfig();
 		PmNodeConstruct();
+		PmConfigLoadObject((u32)&XPm_ConfigObject, 0xFFFFFFFFU);
 	}
 }
 
