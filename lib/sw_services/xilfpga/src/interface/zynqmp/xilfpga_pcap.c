@@ -539,6 +539,10 @@ static u32 XFpga_PostConfigPcap(XFpga *InstancePtr)
 	/* Disable the PCAP clk */
 	RegVal = Xil_In32(PCAP_CLK_CTRL);
 	Xil_Out32(PCAP_CLK_CTRL, RegVal & ~(PCAP_CLK_EN_MASK));
+  
+  /* Give PCAP_CTRL back to ICAP (for Dyplo PR programming via ICAP) */
+	Xil_Out32(CSU_PCAP_CTRL, 0x0);
+  
 	if ((Status == XFPGA_SUCCESS) &&
 	    ((InstancePtr->WriteInfo.Flags & XFPGA_SECURE_FLAGS) != 0U)) {
 		XFpga_SetFirmwareState(XFPGA_FIRMWARE_STATE_SECURE);
