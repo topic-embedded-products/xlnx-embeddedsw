@@ -134,7 +134,7 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_USB_1,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_TTC_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -158,15 +158,15 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_ETH_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_ETH_1,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_ETH_2,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_ETH_3,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -182,11 +182,11 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_SPI_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_SPI_1,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_I2C_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -198,7 +198,7 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_SD_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_SD_1,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -230,7 +230,7 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_CAN_0,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_CAN_1,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -274,7 +274,7 @@ __root const u32 XPm_ConfigObject[] =
 
 	NODE_VCU,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
-	0U, /* IPI Mask */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_0_MASK | PM_CONFIG_IPI_PSU_CORTEXR5_1_MASK, /* IPI Mask */
 
 	NODE_PL,
 	PM_SLAVE_FLAG_IS_SHAREABLE,
@@ -289,7 +289,7 @@ __root const u32 XPm_ConfigObject[] =
 
 /* Prealloc for psu_cortexa53_0 */
 	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK,
-	12,
+	13,
 	NODE_DDR,
 	PM_MASTER_USING_SLAVE_MASK, /* Master is using Slave */
 	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Current Requirements */
@@ -326,6 +326,11 @@ __root const u32 XPm_ConfigObject[] =
 	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Default Requirements */
 
 	NODE_I2C_1,
+	PM_MASTER_USING_SLAVE_MASK, /* Master is using Slave */
+	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Current Requirements */
+	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Default Requirements */
+
+	NODE_SD_0,
 	PM_MASTER_USING_SLAVE_MASK, /* Master is using Slave */
 	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Current Requirements */
 	PM_CAP_ACCESS | PM_CAP_CONTEXT, /* Default Requirements */
@@ -598,7 +603,7 @@ __root const u32 XPm_ConfigObject[] =
 	/**********************************************************************/
 	/* SET CONFIG SECTION */
 	PM_CONFIG_SET_CONFIG_SECTION_ID,	/* Section ID */
-	0,					/* Permissions to set config */
+	PM_CONFIG_IPI_PSU_CORTEXA53_0_MASK,	/* Permissions to set config */
 	/**********************************************************************/
 	/* SHUTDOWN SECTION */
 	PM_CONFIG_SHUTDOWN_SECTION_ID,		/* Section ID */
