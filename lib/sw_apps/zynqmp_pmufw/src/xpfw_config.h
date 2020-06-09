@@ -99,7 +99,7 @@ extern "C" {
  */
 
 #define	ENABLE_PM_VAL					(1U)
-#define	ENABLE_EM_VAL					(0U)
+#define	ENABLE_EM_VAL					(1U)
 #define	ENABLE_SCHEDULER_VAL			(1U)
 #define ENABLE_MOD_ULTRA96_VAL			(0U)
 #define	ENABLE_RECOVERY_VAL				(0U)
