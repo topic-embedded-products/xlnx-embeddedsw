@@ -606,11 +606,6 @@ __root const u32 XPm_ConfigObject[] =
 	/**********************************************************************/
 	/* GPO SECTION */
 	PM_CONFIG_GPO_SECTION_ID,		/* GPO Section ID */
-	PM_CONFIG_GPO1_BIT_2_MASK |
-	PM_CONFIG_GPO1_MIO_PIN_34_MAP |
-	PM_CONFIG_GPO1_MIO_PIN_35_MAP |
-	PM_CONFIG_GPO1_MIO_PIN_36_MAP |
-	PM_CONFIG_GPO1_MIO_PIN_37_MAP |
 	0,					/* State of GPO pins */
 };
 #if defined (__ICCARM__)
